@@ -1,0 +1,149 @@
+
+.mainboard {
+	display: flex;
+	flex-direction: column;
+	border-top: 1px solid whitesmoke;
+	overflow: auto;
+	border-left: 0% solid whitesmoke;
+	grid-gap: 10px;
+	overflow: scroll;
+	height: 100vh;
+	line-height: 100%;
+	max-width: 100%;
+	overflow-y: auto;
+	overflow-x: auto;
+}
+.leftside {
+	grid-row: 1;
+	grid-column: 1;
+}
+
+.boarding {
+	margin-left: 3%;
+	& > img {
+		width: 97%;
+	}
+}
+.l {
+	margin-left: 10%;
+}
+.r {
+	font-size: 130%;
+}
+.top {
+    padding-top: 5rem;
+	display: flex;
+	justify-content: space-between;
+}
+.r1 {
+	display: flex;
+	flex-direction: column;
+	
+	padding-left: 2px;
+	height: 100%;
+	align-items: flex-start;
+}
+.r2 {
+	display: flex;
+	flex-direction: column;
+    align-items: flex-start;
+	padding-left: 2px;
+	margin-left: 2%;
+	padding-right: 2%;
+}
+.meter { 
+    height: 70rem;  
+  
+    position: relative;
+    border-radius: 25px;
+    padding: 0.06rem;
+	background-color: rgb(43,194,83);
+	height: 60%;
+    
+  }
+  .meter > span {
+    display: block;
+    height: 60%;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: rgb(43,194,83);
+    
+
+    position: relative;
+    overflow: hidden;
+  }
+
+.r3 {
+	& > .c2 {
+		height: fit-content;
+	}
+}
+.c1 {
+	box-sizing: content-box;
+	background-color: whitesmoke;
+	margin-left: 10%;
+	padding: 2px 2px 2px 2px;
+	border-width: 20%;
+	width: 300px;
+	height: 100%;
+	padding: 30px 30px;
+  margin-top: 10px;
+  height: auto;
+}
+.c2 {
+	box-sizing: content-box;
+	background-color: whitesmoke;
+	margin-left: 10%;
+	padding: 2px 2px 2px 2px;
+	border-width: 20%;
+	width: 300px;
+	padding: 30px 30px;
+	margin-top: 10px;
+}
+.dot {
+	border-width: 50%;
+	background-color: red;
+}
+
+.low {
+	display: flex;
+}
+
+.show {
+	display: inline;
+	height: fit-content;
+	width: fit-content;
+	position: fixed;
+	z-index: 1;
+	border-radius: 5px;
+	right: 0;
+	background-color: whitesmoke;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 30px;
+}
+.up {
+	margin-top: 1%;
+	max-width: 100vw;
+	overflow-y: auto;
+}
+.first {
+	display: flex;
+	margin-left: 0px;
+	justify-content: space-between;
+	
+	padding-right: 10px;
+}
+.bod {
+	margin-left: 0.6rem;
+	color: black;
+}
+.r1[_ngcontent-fgp-c19] {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2px;
+    height: 100%;
+}
+

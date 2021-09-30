@@ -1,0 +1,87 @@
+.main_issue
+{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    border-top: 1px solid #f3f3f3;
+    overflow: auto;
+    border-left: 10px solid white;
+    background-color: white;
+    grid-gap: 10px;
+    margin-left: 2%;
+    overflow-x:scroll;
+    height: 100%;
+    position: relative;
+    
+    
+
+}
+.container
+{
+    display:flex;
+    box-shadow: none;
+    margin-left: 2%;
+   
+}
+.tp
+{
+    background-color: #ebedf4;
+    border-color: #ebedf4;
+    border-radius: 2px;
+    padding:6px;
+    border-right:102px;
+    padding:13px 24px 8px 15px;
+}
+.structure
+{
+    padding-top: 2%;
+   display:flex;
+   justify-content: space-between;
+   font-size: large;
+   line-height: 150%;
+    
+    
+
+}
+.struct1
+{
+    color:#898cbf;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.struct2
+{
+    color:black;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.dot
+{
+    width: 50%;
+    
+    border-style: dotted;
+    padding:01%;
+    margin-left: 0%;
+    display:block;
+    align-items: center;
+
+}
+.active
+{
+    border-bottom: 3px solid #7579e0;
+}
+.activity
+{
+    border-bottom: 0.5px solid grey;
+    width:50%;
+    display:flex;
+    padding-top: 2%;
+    
+    
+}
+.leftside {
+    grid-row: 1;
+    grid-column: 1;
+}

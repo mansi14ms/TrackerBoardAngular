@@ -1,0 +1,18 @@
+<div class="container-fluid " >
+    <div class="row">
+    <div class="col-md-3">
+    <img [src]="imagePath" alt="logo">
+    </div>
+    <div class="col-md-8">
+        <input type="text" class="textbox" placeholder="search" [(ngModel)]="text">
+      
+        <img [src]="search" alt="logo" (click)="onClick()">
+    </div>
+    
+    <div class="col-md-0.5">
+        <img [src]="avatar" alt="logo" >
+    </div>
+</div>
+</div>
+
+

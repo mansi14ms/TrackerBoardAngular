@@ -1,0 +1,86 @@
+<form [formGroup]="profileForm" class="fo">
+    <label >Title</label>    
+        
+<br>
+   <input type="text" class="txt" formControlName="title" [(ngModel)]="title">
+   <div *ngIf="title.length>350" style="color: red;">Please limit to 250 characters</div>
+  <br>
+  <br>
+  <label  class="b">Type:</label>
+  <label class="a stat" > Status:</label>
+  <br>
+  <select name="cars" id="cars" formControlName="typeD" [(ngModel)]="typeD">
+      <option value="bug">BUG</option>
+      <option value="task">TASK</option>
+      <option value="story">STORY</option>
+      <option value="subtask">SUBTASK</option>
+  </select>
+  <select name="cars" class="inp" formControlName="status" [(ngModel)]="status">
+    <option value="todo">To-Do</option>
+    <option value="inProgress">InProgress</option>
+    <option value="done">Done</option>
+</select>
+  <br><br>
+  
+  <label  class="b">Priority:</label>
+  <label class="a reso"> Resolution:</label>
+  <br>
+  <select name="cars" id="cars" formControlName="priority" [(ngModel)]="priority">
+    <option value="low">LOW</option>
+    <option value="medium">MEDIUM</option>
+    <option value="high">HIGH</option>
+    <option value="urgent">URGENT</option>
+    <option value="immediate">IMMEDIATE</option>
+</select>
+  <input type="text" class="inp" formControlName="resolution" [(ngModel)]="resolution">
+  <br><br>
+  
+  <label  class="b">Affects Version/s:</label>
+  <label class="a ver"> Fixed Version/s:</label>
+  <br>
+  <input type="text" class="inp" style="margin-left:0px" formControlName="affectedVersion" [(ngModel)]="affectedVersion">
+    <input type="text" class="inp" style="margin-left:30%" formControlName="fixedVersion" [(ngModel)]="fixedVersion">
+  
+  <br><br>
+  
+  <label  class="b">Components/s:</label>
+  <label class="a assign"> Assignee:</label>
+  <br>
+  <input type="text" class="inp" style="margin-left:0px" formControlName="components" [(ngModel)]="components">
+    <select name="cars" id="cars" style="margin-left:30%" formControlName="assignee" [(ngModel)]="assignee" >
+      <option *ngFor="let loop of dashService.reporter">{{loop.name}}</option>
+  </select>
+  <br><br>
+  
+  <label  class="b">Labels:</label>
+  <label class="a rep" > Reporter:</label>
+  <br>
+  <input type="text" class="inp" style="margin-left:0px" formControlName="labels" [(ngModel)]="labels">
+    <select name="cars" id="cars" style="margin-left:30%" formControlName="reporter" [(ngModel)]="reporter">
+      <option *ngFor="let loop of dashService.reporter">{{loop.name}}</option>
+    </select>
+  <br><br>
+  
+  <label  class="b">Sprint</label>
+  <label class="a desc" > Description</label>
+  <br>
+  <input type="text" class="inp" style="margin-left:0px" formControlName="sprint" [(ngModel)]="sprint">
+  <input type="text" class="inp" style="margin-left:30%" formControlName="description" [(ngModel)]="description">
+  <div *ngIf="description.length>250" style="color: red;">Please limit to 250 characters</div>
+  <br><br>
+  
+    <label  class="b">Type</label>
+  
+  <br>
+  <input type="text" class="inp" style="margin-left:0px" formControlName="type" [(ngModel)]="type">
+  <div *ngIf="type<0 && type>10" style="color: red;">Please put a value between 0 to 10</div>
+  <br><br>
+  <button class="btn btn-primary" type="submit" value="Submit " style="margin-left:50%"    (click)="onClick()"   >SUBMIT
+</button>
+
+
+
+
+
+
+</form>

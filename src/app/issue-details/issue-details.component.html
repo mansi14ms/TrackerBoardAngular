@@ -1,0 +1,108 @@
+<main class="main_issue" *ngIf='flagIssueNull==true'>
+  <p>  No content  at this moment</p>
+    </main>
+
+<main class="main_issue" *ngIf='flagIssueNull==false'>
+    <div class="leftside" style="position: relative;" >
+    <b><p style="font-size: 20px;margin-left: 10px;">Lorum ipsum dorum sit amet,consectur adipiscing elit</p></b></div>
+    <div class="det_top">
+        <!--head-->
+    <div class="container">
+        <button class="tp"> Edit</button>&nbsp;
+        <button class="tp">✉ Comment</button>&nbsp;
+        <button class="tp" (click)="onClickDelete()"> Delete</button>&nbsp;
+        <button class="tp"> Wont fix</button>&nbsp;
+        <button class="tp"> Accept</button>&nbsp;
+        <button class="tp">Work Flow</button>&nbsp;
+    </div>
+    <div class="structure">
+    <div class="struct1">
+    <content class="t">Type:  </content>
+    <content class="ta">Priority:</content>
+    <content>Affects Version/s</content>
+    <content>Components/s:</content>
+    <content>Labels:</content>
+    <content>Sprint:</content>
+    <content>Story Points:</content>
+    </div>
+    <div class="struct2">
+        <div id="task"><b>Task</b></div>
+        <div style="color:red" id="priority">
+            <b *ngIf='details.severity==1'>Immediate</b>
+            <b *ngIf='details.severity==2'>Urgent</b>
+            <b *ngIf='details.severity==3'>High Priority</b>
+            <b *ngIf='details.severity==4'>Medium</b>
+            <b *ngIf='details.severity==5'>Low</b>
+        </div>
+        <content id="affect"><b>None</b></content>
+        <content id="comp"><b>None</b></content>
+        <content id="sprint"><b>Webetc</b></content>
+        <content ></content>
+        <content id="sp"><b>6</b></content>
+        </div>
+        
+        <div class="struct1">
+            <content>Status:</content>
+            <content>Resolution:</content>
+            <content>Fix Version/s: </content>
+    </div>
+    <div class="struct2">
+        <content id="status">
+            <b *ngIf='details.status==1'>To-Do</b>
+            <b *ngIf='details.status==2'>In-Progress</b>
+            <b *ngIf='details.status==3'>Done</b>
+          
+        </content>
+        <content id="res"><b>Unresplend</b></content>
+        <content id="fix"><b>None</b> </content>
+    </div>
+    <div class="struct1">
+        <content>Assignee:</content>
+        <content>Reporter:</content>
+        <content>Votes:</content>
+        <content>Watchers:</content>
+        <content>Created: </content>
+        <content>Updated:</content>
+        </div>
+        <div class="struct2">
+            <content id="assignee"><span><img  id="ava" width="30px" height="30px"></span> {{name}}</content>
+            <content id="reporter"><span><img  id="ava" width="30px" height="30px"></span> {{details.assignee}}</content>
+            <content id="vo"><b >0</b></content>
+            <content style="color:blue" id="watch"><b >1 stop watching issue</b></content>
+            <content id="crea"><b >{{details.createdOn | date}}</b></content>
+            <content id="up"><b >{{details.createdOn | date}}</b></content>
+            </div>
+    
+    
+    
+    
+    
+    </div>
+    <div class="first">
+        <h3>Description</h3>
+        <h3>Agile</h3>
+    </div>
+    <div class="first">
+        <content><i>{{details.description}}</i></content>
+        <content>View on Board</content>
+       
+    </div>
+    <div class="attachment">
+        <h3>Attachment</h3>
+        <span class="dot">Drop files or <a href='#'>browse</a></span>
+    </div>
+    <div class="Activity">
+        <a >All</a>&nbsp;
+        <a class="active" >Comments</a>&nbsp;
+      <a >Work Log</a>&nbsp;
+      <a >History</a>&nbsp;
+      <a >Activity</a>&nbsp;
+    </div>
+    <div class="sthing">
+        <br>
+      <p>  There are no comments yet on this issue</p>
+      <button class="tp"> Comment</button>&nbsp;
+    </div>
+    
+    </div>
+    

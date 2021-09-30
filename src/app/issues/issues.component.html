@@ -1,0 +1,239 @@
+<div class="mainboard" >
+    <div class="top">
+        
+        <div class="l">
+        <b><p style="font-size: 200%;">Issues</p></b>
+    </div>
+    <div class="filter">
+        <p>Filter</p>&nbsp;&nbsp;<p style="color: black;">Project</p>
+        <img [src]="downArrow" height="24px" width="24px"  height="24px" width="24px" style="margin-top: 15px;">
+        
+    </div>
+    
+   
+    </div>
+
+    <div *ngIf='flag===true || dashservice.flag==true'>
+        <div *ngIf="dashservice.text==null">
+            <div>No result Found</div>
+        </div>
+        <div class="low">
+        <div class="r1">
+            <div class="c2" >ToDo</div>
+            <a >
+        <div *ngFor="let det of details" >
+            <div class="c1"  *ngIf="det.id==dashservice.text  && det.status=='3'">
+                <div class="first">
+                    <h6 style="color: black;"id="id1">Id:{{det.id}}</h6>
+                     <h6 id="dt13">{{det.createdOn | date}}</h6>
+                       </div> 
+                   <div class="high" id="tl1">
+                     {{det.title}}
+                    </div>
+                    <br>
+                    <br>
+                <div class="bod" id="by1">
+                 {{det.description}}<br> 
+                 <br>
+                 <br>
+                 </div>
+               <div class="first">
+      <h6 style=" margin-left: 13px;" id="ay1"> Assignee</h6>
+      <h6 id="su1">Status:{{det.status}}</h6>
+           </div> 
+           <div class="first">
+            <div class="bang"> <img [src]="avatar" id="ava" width="30px" height="30px"> <div class="details"><span id="nm1">{{det.assignee}}</span><span id="ds1">Sr UI/UX</span></div></div>
+          <button id="hp">High Priority</button>
+      </div>
+        </div></div>
+        </a>
+    </div>
+    <div class="r2">
+        <div class="c2" >In Progress</div>
+        <a  >
+    <div *ngFor="let det of details" >
+        <div class="c1"  *ngIf="det.id==dashservice.text && det.status=='2'">
+            <div class="first">
+                <h6 style="color: black;"id="id1">Id:{{det.id}}</h6>
+                 <h6 id="dt13">{{det.createdOn | date}}</h6>
+                   </div> 
+               <div class="high" id="tl1">
+                 {{det.title}}
+                </div>
+                <br>
+                <br>
+
+            <div class="bod" id="by1">
+             {{det.description}}<br> 
+
+             </div>
+           <div class="first">
+  <h6 style=" margin-left: 13px;" id="ay1"> Assignee</h6>
+  <h6 id="su1">Status:{{det.status}}</h6>
+       </div> 
+       <div class="first">
+        <div class="bang"> <img [src]="avatar" id="ava" width="30px" height="30px"> <div class="details"><span id="nm4">{{det.assignee}}</span><span id="ds4">Sr UI/UX</span></div></div>
+        <button id="ip">In Progress</button>
+  </div>
+    </div></div>
+    </a>
+</div>
+<div class="r2">
+    <div class="c2" >Done</div>
+    <a  >
+<div *ngFor="let det of details" >
+    <div class="c1"  *ngIf="det.id==dashservice.text && det.status=='1'">
+        <div class="first">
+            <h6 style="color: black;"id="id1">Id:{{det.id}}</h6>
+             <h6 id="dt13">{{det.createdOn | date}}</h6>
+               </div> 
+           <div class="high" id="tl1">
+             {{det.title}}
+            </div>
+
+        <div class="bod" id="by1">
+         {{det.description}}<br> 
+
+         </div>
+       <div class="first">
+<h6 style=" margin-left: 13px;" id="ay1"> Assignee</h6>
+<h6 id="su1">Status:{{det.status}}</h6>
+   </div> 
+   <div class="first">
+    <div class="bang"> <img [src]="avatar" id="ava" width="30px" height="30px"> <div class="details"><span id="nm4">{{det.assignee}}</span><span id="ds4">Sr UI/UX</span></div></div>
+    <button id="do">Done</button>
+</div>
+</div></div>
+</a>
+</div>
+
+
+
+
+</div>
+</div>
+
+      
+
+
+
+        
+        <div class="low" *ngIf=' dashservice.flag==false '>   
+            <div class="r1">
+                <div class="c2" >ToDo</div>
+                <a  >
+                <div *ngFor="let det of details" (click)="onCompClick(det)" [routerLink]="['../issueDetails/'+det.id]">
+                <div class="c1"  *ngIf="det.status=='3'">
+                      <div class="first">
+                       <h6 style="color: black;"id="id1">Id:{{det.id}}</h6>
+                        <h6 id="dt13">{{det.createdOn | date}}</h6>
+                          </div> 
+                      <div class="high" id="tl1">
+                        {{det.title}}
+                       </div>
+
+                   <div class="bod" id="by1">
+                    {{det.description}}<br> 
+    
+                    </div>
+                  <div class="first">
+         <h6 style=" margin-left: 13px;" id="ay1"> Assignee</h6>
+         <h6 id="su1">Status:{{det.status}}</h6>
+              </div>
+    
+          <div class="first">
+       <div class="bang"> <img [src]="avatar" id="ava" width="30px" height="30px"> <div class="details"><span id="nm1">{{det.assignee}}</span><span id="ds1">Sr UI/UX</span></div></div>
+     <button id="hp">High Priority</button>
+ </div>
+            </div></div>
+    </a>
+    </div>
+            <a class="r2">
+                <div class="c2">  In progress</div>
+                <div *ngFor="let det of details" (click)="onCompClick(det)" [routerLink]="['../issueDetails/'+det.id]">
+                    <div class="c1"  *ngIf="det.status=='2'" >
+                        <div class="first">
+                            <h6 style="color: black;"id="id1">Id:{{det.id}}</h6>
+                             <h6 id="dt13">{{det.createdOn | date}}</h6>
+                               </div> 
+                           <div class="high" id="tl1">
+                             {{det.title}}
+                            </div>
+     
+                        <div class="bod" id="by1">
+                         {{det.description}}<br> 
+         
+                         </div>
+                       <div class="first">
+              <h6 style=" margin-left: 13px;" id="ay1"> Assignee</h6>
+              <h6 id="su1">Status:{{det.status}}</h6>
+                   </div>
+        
+          <div class="first">
+            <div class="bang"> <img [src]="avatar" id="ava" width="30px" height="30px"> <div class="details"><span id="nm4">{{det.assignee}}</span><span id="ds4">Sr UI/UX</span></div></div>
+            <button id="ip">In Progress</button>
+      </div>
+                </div>
+            </div>
+        
+            
+            </a>
+    
+    
+        <a class="r2">
+        <div class="c2">Done </div>
+        <div *ngFor="let det of details" (click)="onCompClick(det)" [routerLink]="['../issueDetails/'+det.id]" >
+            <div class="c1"  *ngIf="det.status=='1'">
+                <div class="first">
+                    <h6 style="color: black;"id="id1">Id:{{det.id}}</h6>
+                     <h6 id="dt13">{{det.createdOn | date}}</h6>
+                       </div> 
+                   <div class="high" id="tl1">
+                     {{det.title}}
+                    </div>
+
+                <div class="bod" id="by1">
+                 {{det.description}}<br> 
+ 
+                 </div>
+               <div class="first">
+      <h6 style=" margin-left: 13px;" id="ay1"> Assignee</h6>
+      <h6 id="su1">Status:{{det.status}}</h6>
+           </div>
+                
+                  <div class="first">
+                    <div class="bang"> <img [src]="avatar" id="ava" width="30px" height="30px"> <div class="details"><span id="nm8">{{det.assignee}}</span><span id="ds8">Sr UI/UX</span></div></div>
+                    <button id="do">Done</button>
+              </div> 
+        </div>
+        </div>
+            </a>
+
+
+
+
+            
+        </div> 
+
+
+
+
+
+
+
+              
+         
+
+
+
+
+
+      
+    
+
+
+
+
+
+
+        </div>

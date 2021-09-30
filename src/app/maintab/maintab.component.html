@@ -1,0 +1,85 @@
+<div class="mainboard" >
+    <div class="top">
+        
+        <div class="l">
+        <b><p style="font-size: 200%;">Dashboard</p></b>
+    </div>
+      
+        <div class="r">
+          <p style="color:#8699ad">for <span style="color:#717684">January 2019</span>
+            <img [src]="downArrow" height="24px" width="24px" ></p> 
+            
+        </div>
+    </div>
+        <div class="boarding">
+            <img [src]="dashboard" >
+        </div>
+        <!--bottom part-->
+        
+        <div class="low">   
+            <div class="r1">
+                <div class="c2" > High Priority</div>
+                <div *ngFor="let det of details">
+            <div class="c1" *ngIf="det.severity>='3'" >
+                <div class="first">
+                    <h6 style="color: black;"id="ttl16"> {{det.title}}</h6>
+                    <h6>{{det.createdOn | date}}</h6>
+                 </div> 
+                 <div class="bod" id="bdy1">
+                    {{det.description}}<br> 
+                    
+                 </div>
+            </div></div>
+    </div>
+            <div class="r2">
+                <div class="c2">  Recently updated issue</div>
+                <div *ngFor="let det of details">
+                <div class="c1" *ngIf="det.severity>='3'">
+                    <div class="first">
+                        <h6 style="color: black;" id="ttl12"> {{det.title}}</h6>
+                        <h6>{{det.createdOn | date}}</h6>
+                     </div> 
+                     <div class="bod" id="bdy5">
+                        {{det.description}}<br> 
+                        
+                     </div>
+                </div>
+              </div>
+           
+               
+            </div>
+    
+    
+        <div class="r2">
+          <div class="c2">All issue </div>
+          <div>
+          <div class="c1"  *ngFor="let det of details">
+          <div style="display: flex;justify-content: space-between;">  
+                <img [src]="avatar" id="ava" width="30px" height="30px">{{det.title}}
+                 <div id="i8">Id:{{det.id}}</div>
+             
+         </div>
+         <div class="meter">
+             <span style="width:75%;height: 0.5rem;"></span>
+         </div>
+         <div class="first">
+            <h4 style="color: black;">Type:{{det.type}}</h4>
+            <h4>Priority:{{det.severity}}</h4>
+         </div> 
+         </div>
+         </div>
+            </div>
+
+
+
+
+            
+        </div> 
+    
+
+
+
+
+
+
+        </div>

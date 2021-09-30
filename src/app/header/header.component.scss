@@ -1,0 +1,24 @@
+.container-fluid{
+   padding: 1000rm 1000rm 1000rm 10000rm;
+   position: sticky;
+   
+   background-color: whitesmoke;
+   height: 55px;
+   }
+
+  .textbox{
+     border: none;
+     padding-top: 5px;
+     margin-top: 10px;
+     background-color: whitesmoke;
+     *:focus {
+      outline: none;
+     
+  }
+  .form-control:focus {
+   border-color: inherit;
+   -webkit-box-shadow: none;
+   box-shadow: none;
+ }
+     
+  }
